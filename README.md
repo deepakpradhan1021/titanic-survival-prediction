@@ -30,6 +30,7 @@ titanic-survival-prediction/
 ├── README.md
 ├── .gitignore
 └── requirements.txt
+```
 
 
 Dataset
@@ -63,6 +64,11 @@ The target variable is:
 Survived = 1 → Passenger survived
 Survived = 0 → Passenger did not survive
 Goal
+
+## Results
+- Model: Random Forest Classifier
+- Accuracy: 82%
+- Precision/Recall (survived): 0.80 / 0.76
 
 Build a machine learning model that can predict whether a Titanic passenger survived based on passenger information.
 
