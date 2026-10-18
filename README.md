@@ -165,6 +165,13 @@ As I continue learning, I plan to:
 
 ---
 
+## 📊 Results
+- **Model:** Random Forest Classifier
+- **Accuracy:** 0.82 (82%)
+- **Key finding:** Female passengers (~74% survival) and first-class ticket holders (~63% survival) had the highest survival rates due to lifeboat boarding protocol ("women and children first") and upper-deck cabin accessibility.
+
+---
+
 ## 👤 Author
 
 **Deepak Pradhan**
