@@ -7,10 +7,23 @@
 [![Streamlit](https://img.shields.io/badge/Web%20App-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Data%20Analysis-Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![Status](https://img.shields.io/badge/Project-Active%20%26%20Progressing-brightgreen)](#)
+[![Live Demo](https://img.shields.io/badge/Streamlit%20App-Live%20Demo-brightgreen?logo=streamlit&logoColor=white)](https://share.streamlit.io/)
 
-[About This Project](#-about-this-project) • [What I Built](#-what-i-built) • [How It Works](#-how-the-machine-learning-works) • [What I Learned](#-key-learnings--takeaways) • [Run It Locally](#-how-to-run-locally) • [Future Ideas](#-future-improvements)
+[Live Demo](#-live-demo) • [About This Project](#-about-this-project) • [What I Built](#-what-i-built) • [How It Works](#-how-the-machine-learning-works) • [Run It Locally](#-how-to-run-locally) • [Results](#-results)
 
+</div>
+
+---
+
+## 🚀 Live Demo
+
+Try the interactive survival simulation app:  
+👉 **[Launch Titanic Survival Predictor](https://share.streamlit.io/)**
+
+<br>
+
+<div align="center">
+  <img src="screenshot.png" alt="Titanic Passenger Survival Predictor App Screenshot" width="850">
 </div>
 
 ---
