@@ -1,111 +1,94 @@
 <div align="center">
 
-# 🚢 Titanic Survival Prediction System
-### *An End-to-End Machine Learning Web Application & Real-Time Decision Simulator*
+# 🚢 Titanic Survival Prediction & Web App
+### *A Machine Learning Learning Project by Deepak Pradhan*
 
-[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Status](https://img.shields.io/badge/Deployment-Live-success?logo=vercel&logoColor=white)](https://share.streamlit.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Web%20App-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Data%20Analysis-Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Status](https://img.shields.io/badge/Project-Active%20%26%20Progressing-brightgreen)](#)
 
-[Explore Features](#-key-features) • [About the Project](#-about-the-project) • [Model & Metrics](#-machine-learning-architecture) • [Run Locally](#-quick-start--local-setup) • [Deploy Online](#-1-click-cloud-deployment)
+[About This Project](#-about-this-project) • [What I Built](#-what-i-built) • [How It Works](#-how-the-machine-learning-works) • [What I Learned](#-key-learnings--takeaways) • [Run It Locally](#-how-to-run-locally) • [Future Ideas](#-future-improvements)
 
 </div>
 
 ---
 
-## 📖 About the Project
+## 📖 About This Project
 
-On April 15, 1912, the RMS Titanic sank in the North Atlantic Ocean after colliding with an iceberg during her maiden voyage. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making it one of the deadliest peacetime commercial maritime disasters in modern history.
+Hi! I'm **Deepak Pradhan**, a student learning and progressing in **Machine Learning and Software Development**. 
 
-While there was an element of chance involved in surviving, historical records demonstrate that demographic, socioeconomic, and cabin location factors played a decisive role in who received access to lifeboats under the maritime protocol: *"Women and children first."*
+This repository started as an exploration of the classic [Kaggle Titanic: Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic) competition. Rather than just writing code in a Jupyter notebook and leaving it there, my goal was to take the project a step further:
 
-### 🎯 Objective
-This project bridges theoretical data science and production engineering. Rather than remaining an isolated Jupyter notebook, it delivers a **fully interactive, production-grade Machine Learning web application** that:
-1. Employs a robust **Scikit-Learn Random Forest pipeline** to predict passenger survival probabilities.
-2. Provides a **human-interpretable breakdown** of the socioeconomic and demographic factors influencing each prediction.
-3. Incorporates **real-time presets** (such as *Rose DeWitt Bukater* and *Jack Dawson*) for instant historical simulation.
-4. Delivers an **Exploratory Data Analysis (EDA)** suite analyzing historical trends across passenger classes, age demographics, and embarkation points.
+- **Understand the Data:** Analyze the demographic patterns of survival from the 1912 Titanic disaster.
+- **Build a Proper ML Pipeline:** Move from raw pandas operations to clean, reproducible `scikit-learn` pipelines that prevent data leakage.
+- **Make It Interactive:** Build an intuitive web application using **Streamlit** so anyone can test passenger profiles and see real-time predictions.
+- **Deploy It:** Learn the process of pushing code to GitHub and hosting it live for public access.
 
 ---
 
-## 🌟 Key Features
+## 🌟 What I Built
 
-| Feature | Description |
-| :--- | :--- |
-| **🔮 Real-Time Survival Predictor** | Adjust passenger parameters (Ticket Class, Gender, Age, Family Members, Fare, and Embarkation Port) and view instant predictions with probability bars. |
-| **⚡ Instant Preset Profiles** | One-click simulation buttons for famous profiles (e.g., *Rose DeWitt Bukater*, *Jack Dawson*, *1st Class Executives*, *Working-class Immigrants*). |
-| **🧠 Interpretable AI / Factors** | Automatic risk assessment attributing predictions to maritime evacuation protocol, cabin deck proximity, and demographic priorities. |
-| **📊 Visual Exploratory Analysis** | Dynamic bar charts and distributions illustrating survival rates across genders, classes, ports, and binned age brackets. |
-| **🌲 Feature Importance Ranking** | Inspects the internal weights of the Random Forest model to understand what mattered most during inference. |
-| **📱 Mobile & Desktop Optimized** | Fully responsive layout with adaptive typography, large touchscreen tap targets (44px min), and support for both Light and Dark modes. |
+### 1. 🔮 Interactive Live Prediction App
+- A user-friendly form where you can select passenger characteristics:
+  - **Ticket Class** (1st, 2nd, or 3rd Class)
+  - **Gender** (Female, Male)
+  - **Age** (with decimal support for infants)
+  - **Family Size** (Siblings/Spouses and Parents/Children aboard)
+  - **Ticket Fare** (£)
+  - **Port of Embarkation** (Southampton, Cherbourg, Queenstown)
+- Outputs both the **predicted outcome** (Likely to Survive vs. Unlikely) and the **calculated probability percentage**.
 
----
+### 2. ⚡ One-Click Passenger Presets
+- Added quick preset buttons for famous passengers to test immediately without typing:
+  - **Rose DeWitt Bukater** (1st Class, high survival probability)
+  - **Jack Dawson** (3rd Class, low survival probability)
+  - **1st Class Executive**
+  - **2nd Class Child**
+  - **3rd Class Immigrant**
 
-## 🏗️ System Architecture & Workflow
+### 3. 📊 Visual Exploratory Data Analysis (EDA)
+- An interactive dashboard tab that visually explains:
+  - Survival rates by gender (showing why the "women and children first" maritime rule had such a huge impact)
+  - Survival rates across 1st, 2nd, and 3rd class cabins
+  - Survival rates across binned age brackets (children, teens, adults, seniors)
+  - Survival rates by embarkation port
+  - The model's **Feature Importance ranking**
 
-```
-┌─────────────────────────────────┐
-│     Historical Kaggle Data      │
-│        (data/train.csv)         │
-└────────────────┬────────────────┘
-                 │
-                 ▼
-┌────────────────────────────────────────────────────────┐
-│             Pre-Processing Pipeline                    │
-│  - Numerical: Median Imputer (Age, Fare, Pclass)       │
-│  - Categorical: Mode Imputer + OneHotEncoder (Sex, Emb)│
-└────────────────┬───────────────────────────────────────┘
-                 │
-                 ▼
-┌────────────────────────────────────────────────────────┐
-│             Model Training & Validation                │
-│  - RandomForestClassifier (100 estimators, max_depth=7)│
-│  - Stratified 80/20 Train-Test Validation              │
-└────────────────┬───────────────────────────────────────┘
-                 │
-                 ▼
-┌────────────────────────────────────────────────────────┐
-│            Serialized Production Artifact              │
-│                     (model.joblib)                     │
-└────────────────┬───────────────────────────────────────┘
-                 │
-                 ▼
-┌────────────────────────────────────────────────────────┐
-│               Streamlit Web Interface                  │
-│  - Live Predictor & Risk Assessment (app.py)           │
-│  - Demographic Analysis & Feature Importance           │
-│  - Cloud Hosted (Streamlit Community Cloud)            │
-└────────────────────────────────────────────────────────┘
-```
+### 4. 📱 Mobile & Web Friendly
+- Optimized layout with collapsible sidebars on phones, fluid typography, and large touch-friendly buttons.
 
 ---
 
-## 📊 Machine Learning Architecture
+## 🧠 How the Machine Learning Works
 
-The predictive engine uses an encapsulated Scikit-learn `Pipeline` paired with a `ColumnTransformer`:
+### 1. Preprocessing with `ColumnTransformer`
+To ensure clean predictions and prevent data leakage:
+- **Numerical Features** (`Pclass`, `Age`, `SibSp`, `Parch`, `Fare`): Missing values are imputed using the **median**.
+- **Categorical Features** (`Sex`, `Embarked`): Missing values are imputed using the **most frequent value (mode)**, followed by **One-Hot Encoding** (`drop='first'`).
 
-### 1. Data Preprocessing
-- **Numerical Features** (`Pclass`, `Age`, `SibSp`, `Parch`, `Fare`): Missing values are imputed using **Median Imputation** to prevent distortion from extreme fares and skewed age values.
-- **Categorical Features** (`Sex`, `Embarked`): Missing values are resolved using **Mode Imputation**, followed by **One-Hot Encoding** with `drop='first'` to prevent multicollinearity.
+### 2. The Model: `RandomForestClassifier`
+- I chose a Random Forest with 100 estimators and a controlled depth (`max_depth=7`) to avoid overfitting on the training data.
+- The pipeline is serialized into `model.joblib` so the web app can make instant predictions without needing to retrain each time.
 
-### 2. Model Performance Benchmarks
+### 3. Results & Evaluation
 
-| Metric | Score | Note |
+| Metric | Test Set Score | What It Means |
 | :--- | :--- | :--- |
-| **Validation Accuracy** | **~80.0% – 82.0%** | Evaluated on stratified test split |
-| **Precision (Survived)** | **0.78** | Minimizes false positive survival claims |
-| **Recall (Survived)** | **0.62 – 0.76** | Accurately identifies true survivors |
-| **F1-Score** | **0.70 – 0.78** | Harmonic mean balancing precision and recall |
+| **Accuracy** | **~80% – 82%** | Overall percentage of correct predictions |
+| **Precision (Survived)** | **0.78** | When the model predicts a passenger survived, it is correct 78% of the time |
+| **Recall (Survived)** | **0.62 – 0.70** | The proportion of actual survivors the model caught |
+| **F1-Score** | **0.70 – 0.74** | Balance between precision and recall |
 
-### 3. Feature Importance (Random Forest Weights)
-1. **Gender (`Sex_male`)**: ~40.0% — The single most decisive factor ("Women and children first").
-2. **Ticket Fare (`Fare`)**: ~19.8% — Proxy for cabin deck level and life vest access.
-3. **Passenger Age (`Age`)**: ~14.9% — Prioritization of young children during lifeboat loading.
-4. **Ticket Class (`Pclass`)**: ~11.8% — 1st Class cabins had direct boat-deck access.
-5. **Family Relations (`SibSp`, `Parch`)**: ~9.5% — Small families coordinated successfully; large families faced severe delays.
-6. **Embarkation Port (`Embarked`)**: ~3.8% — Slight correlation with socioeconomic ticket batches.
+### 4. Feature Importance
+From the trained Random Forest, here is what the model found most influential:
+1. **Gender (`Sex`)**: ~40% importance (by far the strongest predictor)
+2. **Ticket Fare (`Fare`)**: ~20% importance (reflects cabin location and deck access)
+3. **Age (`Age`)**: ~15% importance (children prioritized for lifeboats)
+4. **Ticket Class (`Pclass`)**: ~12% importance (1st class had faster access to the boat deck)
+5. **Family Size (`SibSp`, `Parch`)**: ~9% importance (small families coordinated better than large families)
+6. **Embarkation Port (`Embarked`)**: ~4% importance
 
 ---
 
@@ -115,94 +98,75 @@ The predictive engine uses an encapsulated Scikit-learn `Pipeline` paired with a
 titanic-survival-prediction/
 │
 ├── data/
-│   └── train.csv            # Kaggle Titanic training dataset
-├── app.py                   # Streamlit web application & UI logic
-├── train_model.py           # Production model pipeline & serialization script
-├── model.joblib             # Serialized trained model artifact
-├── analysis.ipynb           # Exploratory data analysis notebook
-├── requirements.txt         # Clean, platform-agnostic dependencies
-├── .gitignore               # Ignored cache & environment directories
-└── README.md                # Project documentation & reference
+│   └── train.csv            # Original Kaggle training data
+├── app.py                   # Streamlit web application
+├── train_model.py           # Script to train and save model.joblib
+├── model.joblib             # Saved trained pipeline artifact
+├── analysis.ipynb           # Initial Jupyter notebook with EDA & experiments
+├── requirements.txt         # Required Python packages
+├── .gitignore               # Ignored files (.venv, caches, etc.)
+└── README.md                # Project documentation
 ```
 
 ---
 
-## 🚀 Quick Start & Local Setup
+## 🚀 How to Run Locally
 
-### Prerequisites
-- Python 3.10 or higher
-- Git
+If you'd like to run this project on your own machine:
 
-### Installation Steps
-
-1. **Clone the repository:**
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/deepakpradhan1021/titanic-survival-prediction.git
    cd titanic-survival-prediction
    ```
 
-2. **Set up a virtual environment:**
+2. **Create and activate a virtual environment:**
    ```bash
-   # Windows (PowerShell)
+   # On Windows
    python -m venv .venv
    .\.venv\Scripts\activate
 
-   # macOS / Linux
+   # On macOS / Linux
    python3 -m venv .venv
    source .venv/bin/activate
    ```
 
-3. **Install dependencies:**
+3. **Install the dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **(Optional) Retrain and rebuild model pipeline:**
-   ```bash
-   python train_model.py
-   ```
-
-5. **Run the Streamlit application:**
+4. **Launch the Streamlit app:**
    ```bash
    streamlit run app.py
    ```
-   Open your browser at **`http://localhost:8501`**.
+   Open your browser at `http://localhost:8501`.
 
 ---
 
-## 🌐 1-Click Cloud Deployment
+## 💡 Key Learnings & Takeaways
 
-This project is optimized for deployment on **Streamlit Community Cloud**:
-
-1. Fork or push this repository to your GitHub account: `https://github.com/deepakpradhan1021/titanic-survival-prediction`.
-2. Visit [share.streamlit.io](https://share.streamlit.io) and log in using GitHub.
-3. Click **"New app"** and fill in:
-   - **Repository:** `deepakpradhan1021/titanic-survival-prediction`
-   - **Branch:** `main`
-   - **Main file path:** `app.py`
-4. Click **"Deploy!"** Your application will be live 24/7 with a shareable public URL.
+As a student building this project end-to-end, here are the main things I learned:
+- **Data Preprocessing Pipelines:** How using scikit-learn's `Pipeline` and `ColumnTransformer` is much cleaner and safer than applying manual transforms with pandas in multiple places.
+- **Imputation Strategy:** Why median imputation works better than mean imputation for skewed data like `Fare` and `Age`.
+- **Packaging & Deployment:** How to structure a project with `requirements.txt` and serialized artifacts (`.joblib`) so it can be deployed on the cloud.
+- **Building Interactive UIs:** How Streamlit enables data scientists to quickly create real-time web tools without needing complex frontend frameworks.
+- **Handling Real-World Edge Cases:** Making sure the app doesn't crash on extreme inputs (like an infant passenger aged 0.42 or a zero-dollar ticket).
 
 ---
 
-## 🤝 Contributing
+## 🔮 Future Improvements
 
-Contributions, issues, and feature suggestions are welcome!
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/NewFeature`).
-3. Commit your Changes (`git commit -m "Add NewFeature"`).
-4. Push to the Branch (`git push origin feature/NewFeature`).
-5. Open a Pull Request.
-
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
+As I continue learning, I plan to:
+- [ ] Experiment with hyperparameter tuning using `GridSearchCV` or `RandomizedSearchCV`.
+- [ ] Try boosting algorithms like **XGBoost** or **LightGBM** to compare performance against Random Forest.
+- [ ] Add more feature engineering, such as extracting titles from passenger names (Mr., Mrs., Master, Dr.) and creating a combined `FamilySize` feature.
+- [ ] Add unit tests for preprocessing and inference pipelines.
 
 ---
 
 ## 👤 Author
 
 **Deepak Pradhan**
-- 🐙 GitHub: [@deepakpradhan1021](https://github.com/deepakpradhan1021)
-- 💼 Project: [titanic-survival-prediction](https://github.com/deepakpradhan1021/titanic-survival-prediction)
+- GitHub: [@deepakpradhan1021](https://github.com/deepakpradhan1021)
+- *Always open to constructive feedback, suggestions, and learning opportunities!*
