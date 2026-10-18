@@ -1,78 +1,115 @@
-# Titanic Survival Prediction
+# 🚢 Titanic Survival Prediction & Interactive Web App
 
-A machine learning project that predicts whether a passenger survived the Titanic disaster.
+A production-ready machine learning web application that predicts passenger survival on the Titanic with real-time probabilistic insights and interactive Exploratory Data Analysis (EDA).
 
-## Project Overview
+---
 
-This project uses the [Titanic dataset from Kaggle](https://www.kaggle.com/competitions/titanic) to build a machine learning model for survival prediction.
+## 🌟 Live Features
 
-The project covers data analysis, data cleaning, visualization, feature preprocessing, model training, and model evaluation.
+- **🔮 Interactive Real-Time Predictor**: Select passenger demographics, ticket class, fare, family size, and embarkation port to receive instant survival predictions and probability scores.
+- **🎭 Preset Profiles**: Instant one-click simulation for famous passengers (e.g., *Rose DeWitt Bukater*, *Jack Dawson*, and typical demographic archetypes).
+- **📊 Exploratory Data Analysis**: Visual breakdown of historical survival rates across gender, passenger class, age distribution, and embarkation ports.
+- **🧠 Production ML Pipeline**: Built with Scikit-learn unified `ColumnTransformer` + `Pipeline`, combining median/mode imputation, one-hot encoding, and a tuned `RandomForestClassifier`.
 
-## Technologies Used
+---
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Jupyter Notebook
+## 🛠️ Technologies Used
 
-## Project Structure
+- **Web Application**: Streamlit
+- **Machine Learning**: Scikit-Learn (`RandomForestClassifier`, `Pipeline`, `ColumnTransformer`)
+- **Data Manipulation & Serialization**: Pandas, NumPy, Joblib
+- **Visualization**: Altair, Matplotlib, Seaborn
+- **Development**: Python 3.13+, Jupyter Notebook
 
+---
+
+## 📂 Project Structure
+
+```text
 titanic-survival-prediction/
 │
 ├── data/
-│   └── train.csv
-├── analysis.ipynb
-├── README.md
-├── .gitignore
-└── requirements.txt
+│   └── train.csv            # Training dataset (Kaggle Titanic)
+├── app.py                   # Interactive Streamlit Web Application
+├── train_model.py           # Model training and artifact pipeline script
+├── model.joblib             # Serialized trained model pipeline
+├── analysis.ipynb           # Exploratory data analysis notebook
+├── requirements.txt         # Production dependencies
+├── .gitignore               # Git ignore rules
+└── README.md                # Project documentation
 ```
 
-## Dataset
+---
 
-Dataset: [Kaggle Titanic Dataset](https://www.kaggle.com/competitions/titanic)
+## 🚀 Running the Project Locally
 
-The dataset contains information about Titanic passengers, including:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/deepakpradhan1021/titanic-survival-prediction.git
+   cd titanic-survival-prediction
+   ```
 
-- Passenger class
-- Gender
-- Age
-- Fare
-- Number of siblings/spouses
-- Number of parents/children
-- Survival status
+2. **Create and activate a virtual environment:**
+   ```bash
+   # Windows
+   python -m venv .venv
+   .\.venv\Scripts\activate
 
-## Workflow
+   # macOS / Linux
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
 
-1. Load the dataset
-2. Explore the data
-3. Handle missing values
-4. Analyze and visualize the data
-5. Encode categorical features
-6. Train a Random Forest classifier
-7. Evaluate model performance
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Machine Learning
+4. **(Optional) Train or regenerate the model artifact:**
+   ```bash
+   python train_model.py
+   ```
 
-The project uses Scikit-learn to train and evaluate a classification model.
+5. **Launch the web application:**
+   ```bash
+   streamlit run app.py
+   ```
+   Open your browser at `http://localhost:8501`.
 
-The target variable is:
+---
 
-- `Survived = 1` → Passenger survived
-- `Survived = 0` → Passenger did not survive
+## 🌐 Deploying Live to the Web (Streamlit Community Cloud)
 
-## Results
+You can deploy this project live for free in under 2 minutes:
 
-- Model: Random Forest Classifier
-- Accuracy: 82%
-- Precision / Recall (survived): 0.80 / 0.76
+1. Push your updated code to GitHub:
+   ```bash
+   git add .
+   git commit -m "Add interactive web app and model artifact for live deployment"
+   git push origin main
+   ```
+2. Navigate to [Streamlit Community Cloud](https://share.streamlit.io).
+3. Sign in with GitHub.
+4. Click **New app** and configure:
+   - **Repository**: `deepakpradhan1021/titanic-survival-prediction`
+   - **Branch**: `main`
+   - **Main file path**: `app.py`
+5. Click **Deploy!** Your application will be live at `https://<your-custom-name>.streamlit.app`.
 
-## Goal
+---
 
-Build a machine learning model that can predict whether a Titanic passenger survived based on passenger information.
+## 📊 Model & Performance
 
-## Author
+- **Model Type**: Random Forest Classifier (`n_estimators=100, max_depth=7`)
+- **Evaluation Accuracy**: ~80% - 82%
+- **Target Variable**:
+  - `Survived = 1` → Passenger survived
+  - `Survived = 0` → Passenger did not survive
+- **Key Determinants**: Gender (`Sex`), Passenger Class (`Pclass`), and Ticket Fare (`Fare`).
 
-Deepak Pradhan
+---
+
+## 👤 Author
+
+**Deepak Pradhan**  
+- GitHub: [@deepakpradhan1021](https://github.com/deepakpradhan1021)
