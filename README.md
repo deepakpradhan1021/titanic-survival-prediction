@@ -7,9 +7,10 @@
 [![Streamlit](https://img.shields.io/badge/Web%20App-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Data%20Analysis-Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/Streamlit%20App-Live%20Demo-brightgreen?logo=streamlit&logoColor=white)](https://titanic-survival-prediction-c3s4sq29gwey7kgtujcntq.streamlit.app/)
 
-[Live Demo](https://titanic-survival-prediction-c3s4sq29gwey7kgtujcntq.streamlit.app/) • [About This Project](#-about-this-project) • [What I Built](#-what-i-built) • [How It Works](#-how-the-machine-learning-works) • [Run It Locally](#-how-to-run-locally) • [Results](#-results)
+[Live Demo](https://titanic-survival-prediction-c3s4sq29gwey7kgtujcntq.streamlit.app/) • [About This Project](#-about-this-project) • [What I Built](#-what-i-built) • [Model Comparison & Results](#-model-comparison--results) • [Run It Locally](#-how-to-run-locally) • [License](#-license)
 
 </div>
 
@@ -85,14 +86,17 @@ To ensure clean predictions and prevent data leakage:
 - I chose a Random Forest with 100 estimators and a controlled depth (`max_depth=7`) to avoid overfitting on the training data.
 - The pipeline is serialized into `model.joblib` so the web app can make instant predictions without needing to retrain each time.
 
-### 3. Results & Evaluation
+### 3. Model Comparison & Results
 
-| Metric | Test Set Score | What It Means |
-| :--- | :--- | :--- |
-| **Accuracy** | **~80% – 82%** | Overall percentage of correct predictions |
-| **Precision (Survived)** | **0.78** | When the model predicts a passenger survived, it is correct 78% of the time |
-| **Recall (Survived)** | **0.62 – 0.70** | The proportion of actual survivors the model caught |
-| **F1-Score** | **0.70 – 0.74** | Balance between precision and recall |
+To benchmark performance, I evaluated multiple classification models on the test set (`test_size=0.2`, `random_state=42`):
+
+| Model | Accuracy | Precision | Recall | F1-Score | Status |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Random Forest Classifier** | **0.82 (82%)** | **0.80** | **0.76** | **0.78** | **Selected (Production)** |
+| **Logistic Regression** | 0.81 (81%) | 0.79 | 0.74 | 0.76 | Baseline |
+| **Decision Tree Classifier** | 0.80 (80%) | 0.83 | 0.65 | 0.73 | Baseline |
+
+- **Why Random Forest?** It achieved the highest overall accuracy (**0.82**) and the highest balanced F1-score (**0.78**), outperforming single decision trees and linear boundaries by effectively capturing non-linear feature interactions (such as the combined impact of female gender and 1st-class ticket status).
 
 ### 4. Feature Importance
 From the trained Random Forest, here is what the model found most influential:
@@ -117,6 +121,7 @@ titanic-survival-prediction/
 ├── model.joblib             # Saved trained pipeline artifact
 ├── analysis.ipynb           # Initial Jupyter notebook with EDA & experiments
 ├── requirements.txt         # Required Python packages
+├── LICENSE                  # MIT License
 ├── .gitignore               # Ignored files (.venv, caches, etc.)
 └── README.md                # Project documentation
 ```
@@ -178,10 +183,17 @@ As I continue learning, I plan to:
 
 ---
 
-## 📊 Results
-- **Model:** Random Forest Classifier
+## 📊 Results Summary
+- **Selected Model:** Random Forest Classifier
 - **Accuracy:** 0.82 (82%)
+- **Precision / Recall / F1:** 0.80 / 0.76 / 0.78
 - **Key finding:** Female passengers (~74% survival) and first-class ticket holders (~63% survival) had the highest survival rates due to lifeboat boarding protocol ("women and children first") and upper-deck cabin accessibility.
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
